@@ -1,10 +1,14 @@
 // pages/api/profile/getByProfileId.js
 import ProfileModel from "@/models/ProfileModel";
 import connectDB from "@/utils/connectDB";
+import NextCors from 'nextjs-cors';
 
 export default async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001/');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  await NextCors(req, res, {
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    origin: '*',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+ });
   if (req.method !== "GET") {
     return res.status(405).end(); 
   }
