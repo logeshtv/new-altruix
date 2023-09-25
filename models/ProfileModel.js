@@ -9,6 +9,7 @@ const profileSchema = new mongoose.Schema(
     collegeRegistrationNumber : {type: Number, required: true},
     eventInterest: [{ type: String }],
     eventAttended: [{ type: String }],
+    isPaid : {type:Boolean, default:false}
   },
   {
     timestamps: true,
