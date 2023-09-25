@@ -1,7 +1,6 @@
 // pages/api/profile/getByProfileId.js
 import ProfileModel from "@/models/ProfileModel";
 import connectDB from "@/utils/connectDB";
-import { runMiddleware } from "@/utils/runMiddleware";
 
 export default async (req, res) => {
   if (req.method !== "GET") {
