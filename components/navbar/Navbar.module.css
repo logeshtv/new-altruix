@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'altruix';
+  src: url(../fonts/Strong.otf);
+}
+
+
+.navbar {
+  @apply sticky top-0 left-0 right-0 w-full py-2 px-20 flex justify-between items-center overflow-hidden z-[100];
+  @apply 2xl:px-10;
+  @apply xl:px-8;
+  @apply sm:px-6;
+  @apply xs:px-3;
+  background-color: rgba(24, 30, 35, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.navTitle {
+  color: rgb(255, 68, 51);
+  font-family: 'altruix';
+  transition: 0.3s;
+  transition: all 400ms ease-in-out;
+  @apply ml-6 text-5xl ;
+}
+
+.navTitle > span {
+  font-family: 'altruix';
+  color: aliceblue;
+  @apply text-5xl;
+}
+
+.navTitle:hover span:nth-child(1) {
+  margin-right: 20px;
+  font-size: 150px;
+  @apply text-6xl;
+}
+
+.navTitle:hover span:nth-child(2) {
+  margin-right: 20px;
+  margin-left: 20px;
+  @apply text-6xl;
+}
+
+.navbarList {
+  @apply flex gap-12 justify-evenly items-center text-primary-light;
+  transition: all 300ms ease-in-out;
+  @apply 2xl:gap-10;
+  @apply xl:gap-4;
+  @apply xl:hidden;
+}
+
+.navbarList > .navLink {
+  @apply font-semibold text-base xl:mx-5;
+  transition: all 300ms ease-in-out;
+  width: fit-content;
+}
+.navbarList > .navLink:hover {
+  @apply  font-medium;
+  color: hsl(5, 100%, 60%);
+  text-shadow:  0 0px 50px hsl(5, 100%, 60%);
+}
+
+.humburgerMenu {
+  @apply cursor-pointer hidden xl:block;
+}
+
+.logo {
+  border: 5px;
+  border-color: rgb(255, 68, 51);
+}
+
+
+@media (max-width: 768px) {
+  /* Adjust the navbar for small screens */
+  .navbar {
+    padding: 10px; /* Example: Reduce padding for small screens */
+  }
+
+  /* Adjust the navigation title for small screens */
+  .navTitle {
+    font-size: 24px; /* Example: Reduce font size for small screens */
+  }
+  .navTitle > span{
+    font-size: 24px;
+  }
+  .navTitle:hover span:nth-child(1) {
+    margin-right: 10px;
+    @apply text-3xl;
+  }
+  
+  .navTitle:hover span:nth-child(2) {
+    margin-right: 10px;
+    margin-left: 10px;
+    @apply text-3xl;
+  }
+
+  /* Add more styles for other elements as needed */
+}

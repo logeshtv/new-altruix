@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Codystar:wght@300;400&family=Darker+Grotesque:wght@500&display=swap");
+/* @import '~animate.css/animate.css'; */
+
+.countdown-root {
+    padding-left: 15px ;
+    --light_col: hsl(5, 100%, 60%);
+    --letter_border:  hsl(5, 100%, 60%);
+    margin-bottom: 80px;
+}
+
+
+#main {
+    width: 95vw;
+    margin: 2rem auto;
+}
+
+#clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+#clock span {
+    background-color: #000;
+    text-align: center;
+    font-size: 6vw;
+    margin: 20px;
+    color: #fdf5e6;
+    padding: 19px;
+    width: calc(23% - 2px);
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid hsl(5, 100%, 60%);
+    box-shadow: 0 0px 5px hsl(5, 100%, 60%),
+            0 0px 5px hsl(5, 100%, 60%),
+            0px 0px 10px hsl(5, 100%, 60%),
+            0px 0px 10px hsl(5, 100%, 60%),
+            0 0px 5px hsl(5, 100%, 60%);
+    transition: box-shadow 0.5s, top 0.5s;
+
+}
+#clock span:hover{
+    box-shadow: 0 0px 10px hsl(5, 100%, 60%),
+    0 0px 20px hsl(5, 100%, 60%),
+    0 0px 40px hsl(5, 100%, 60%),
+    0 0px 20px hsl(5, 100%, 60%),
+    0 0px 10px hsl(5, 100%, 60%)
+}
+
+#clock::after {
+    content: "";
+
+    display: block;
+    clear: both;
+}
+
+
+
+@media (max-width: 1200px) {
+    .countdown-root {
+        margin-top: 8rem;
+      padding-left: 20px; 
+      margin-bottom: 80px; 
+    }
+  
+    #clock span {
+      font-size: 4vw;
+      padding: 8px;
+      width: calc(23% - 2px);
+    }
+  
+    #clock {
+      height: 9vh;
+    }
+  
+    #sign_text {
+      font-size: 4vw; 
+      padding-top: 5rem;
+    }
+  }
+@media (max-width: 768px) {
+    .countdown-root {
+        margin-top: 3rem;
+      padding-left: 20px; /* Adjust padding for smaller screens */
+      margin-bottom: 40px; /* Adjust margin for smaller screens */
+    }
+  
+    #clock span {
+      font-size: 4vw; /* Reduce font size for smaller screens */
+      padding: 8px;
+      width: calc(23% - 2px);
+    }
+        #display span {
+          margin-top: 2px;
+          /* Adjust as needed for screens up to 768px wide */
+        }
+  
+    #clock {
+      height: 9vh;
+    }
+   
+    #sign_text {
+      font-size: 4vw; /* Reduce font size for smaller screens */
+      padding-top: 5rem; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 460px) {
+    .countdown-root {
+        margin-top: 1.5rem;
+      padding-left: 10px; /* Adjust padding for smaller screens */
+      margin-bottom: 40px; /* Adjust margin for smaller screens */
+    }
+  
+    #clock span {
+      font-size: 4vw; /* Reduce font size for smaller screens */
+      padding: 2px;
+      width: calc(23% - 2px);
+    }
+            
+    #clock {
+      height: 9vh;
+    }
+   
+    #sign_text {
+      font-size: 5vw; /* Reduce font size for smaller screens */
+      padding-top: 5rem; /* Adjust padding for smaller screens */
+    }
+  }
+  
+#display{
+  text-align: center;
+
+}
+
+#display span {
+    margin-top: 5px;
+    display: inline-block;
+      width:calc(23% - 2px);
+      margin-right: 2%;
+    text-transform: uppercase;
+    font-size: 2vw;
+    letter-spacing: 3px;
+ 
+    color: white;
+       
+
+}
+#display span:hover {
+    text-shadow: 0 0px 10px hsl(5, 100%, 60%),
+    0 0px 20px hsl(5, 100%, 60%),
+    0 0px 40px hsl(5, 100%, 60%),
+    0 0px 20px hsl(5, 100%, 60%),
+    0 0px 10px hsl(5, 100%, 60%)
+}
+
+
+
+
+#sign {
+    display: block;
+    width: 95%;
+    margin: auto;
+    padding-top: 9rem;
+}
+
+#sign_text {
+    color: var(--light_col);
+    border: 6px solid var(--light_col);
+    padding: 0.3em 0.3em 0.3em 0.3em;
+    border-radius: 15px;
+    font-size: 5.5vw;
+    text-align: center;
+    font-family: "Codystar", cursive;
+    font-weight: 300;
+    text-shadow: 0px 0px 20px var(--light_col), -1px 0 var(--letter_border),
+        0 1px var(--letter_border), 1px 0 var(--letter_border),
+        0 -1px var(--letter_border);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.sign_letter {
+    margin-left: -5px;
+}
+
+
+#main form {
+    width: 70%;
+    margin: auto;
+    padding-top: 12rem;
+}
+
+
+@media (max-width: 480px)  {
+    .countdown-root {
+      padding-left: 2px; /* Adjust padding for small screens */
+      margin-bottom: 15px; /* Adjust margin for small screens */
+    }
+  
+    #clock span {
+      font-size: 5vw; /* Reduce font size for small screens */
+      padding: 7px; /* Adjust padding for small screens */
+      width: calc(33.33% - 10px); 
+      margin-right: 9px; 
+    }
+  
+    #clock {
+      height: 6.5vh; /* Adjust height for small screens */
+    }
+   
+        #display span:hover {
+          text-shadow: 0 0px 10px hsl(5, 100%, 60%),
+            0 0px 20px hsl(5, 100%, 60%),
+            0 0px 40px hsl(5, 100%, 60%),
+            0 0px 20px hsl(5, 100%, 60%),
+            0 0px 10px hsl(5, 100%, 60%)
+        }
+  
+        
+        
+    #sign_text {
+      font-size: 5vw; /* Reduce font size for small screens */
+      padding-top: 3rem; /* Adjust padding for small screens */
+    }
+    
+  }

@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'ActionComic';
+  src: url(./fonts/HeroesLegendHollow.ttf);
+}
+
+.video {
+  @apply relative;
+  height: 90vh;
+  /* @apply sm:h-auto; */
+}
+
+.designVideoContainer {
+  position: relative;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  height: 100%;
+  overflow: hidden;
+}
+
+.designVideoContainer > video {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  @apply absolute top-0 left-0 right-0 bottom-0;
+}
+
+.designVideoContainer::before {
+  content: '';
+  z-index: 2;
+  opacity: 0.45;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  background: linear-gradient(#64eeee8e, #060306);
+}
+
+
+@keyframes moveMask {
+  0% {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  100% {
+    -webkit-mask-position: 114px 0;
+    mask-position: 114px 0;
+  }
+}
+
+.content {
+  @apply absolute w-full flex justify-center items-center flex-wrap;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+  z-index: 55;
+  @apply md:justify-center md:w-full;
+  /* @apply sm:static sm:transform-none sm:my-5 sm:px-3 sm:justify-center; */
+}
+
+.content > h1 {
+    font-family: 'ActionComic';
+    background: url('https://i.pinimg.com/originals/64/f9/60/64f9607347a4a28fb88724520b796a41.gif')center center repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 2.5rem;
+    font-size: 12rem;
+    letter-spacing: 10px;
+    margin: 0px;
+    color: transparent;
+}
+
+.content:hover h1{
+  cursor: pointer;
+  
+  text-shadow: 
+    0px 0px 5px rgb(148,0,211);
+}
+
+@media (max-width: 1360px) {
+  .video {
+    height: 90vh;
+  }
+
+  .content {
+    top: 40%;
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 2.3rem;
+    font-size: 11rem;
+  }
+
+}
+
+
+@media (max-width: 1260px) {
+  .video {
+    height: 90vh;
+  }
+
+  .content {
+    top: 40%;
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 2rem;
+    font-size: 10rem;
+  }
+
+}
+
+@media (max-width: 1260px) {
+  .video {
+    height: 85vh;
+  }
+
+  .content {
+    top: 40%;
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 1.7rem;
+    font-size: 8rem;
+  }
+}
+
+
+@media (max-width: 940px) {
+  .video {
+    height: 75vh;
+  }
+
+  .content {
+    top: 40%;
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 1.5rem;
+    font-size: 7rem;
+  }
+}
+
+
+@media (max-width: 830px) {
+  .video {
+    height: 65vh;
+  }
+
+  .content {
+    top: 40%;
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 1.2rem;
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .video {
+    height: 60vh;
+  }
+
+  .content {
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 1rem;
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .video {
+    height: 55vh;
+  }
+
+  .content {
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 0.7rem;
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 490px) {
+  .video {
+    height: 50vh;
+  }
+
+  .content {
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 0.5rem;
+    font-size: 3rem;
+  }
+
+}
+
+@media (max-width: 390px) {
+  .video {
+    height: 45vh;
+  }
+
+  .content {
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    padding: 0.2rem;
+    font-size: 2rem;
+  }
+
+}
+@media (max-width: 310px) {
+  .video {
+    height: 40vh;
+  }
+
+  .content {
+    top:40%;
+    text-align: center; /* Center align content on small screens */
+  }
+  .content > h1{
+    font-size: 1rem;
+  }
+
+}
