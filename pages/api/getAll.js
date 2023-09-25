@@ -3,6 +3,8 @@ import ProfileModel from "@/models/ProfileModel";
 import connectDB from "@/utils/connectDB";
 
 export default async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001/');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   if (req.method !== "GET") {
     return res.status(405).end(); 
   }
