@@ -20,7 +20,8 @@ module.exports = {
         light: "#FFA776",
       },
       aneesh: "hsl(5, 100%, 60%)",
-      red: "#FF370D"
+      red: "#FF370D",
+      dashboardNav:"#1D1D1D",
     },
 		screens: {
       'm2xl': { min: '1500px' },

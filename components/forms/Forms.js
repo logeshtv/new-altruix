@@ -96,6 +96,7 @@ export default function ContactForm() {
               <div className="sm:mt-12 mt-16 px-12">
                 <BottomGlitter text="Techno Think Event" />
               </div>
+              <span>(Registration fees 150 per head)</span>
               <Link href="https://docs.google.com/forms/d/1Rd8EpOmK3aw91d74NnFG0soiV-46Wov8t3W_KbPb6v4/edit">
                 <a className="rounded-full">
                   <Button className="bg-aneesh mt-8 ">
@@ -107,6 +108,7 @@ export default function ContactForm() {
       <div className="sm:mt-12 mt-16 px-12 ">
         <BottomGlitter text="Registration For Other Events" />
       </div>
+      <span>(Registration fees 150 per head)</span>
       <div className="w-3/5 sm:w-5/6 lg:w-4/5 lg:p-8 xl:w-4/5 sm:p-4 p-16 sm:mt-12 mt-24 bg-aneesh rounded-lg" >
       <form onSubmit={handleSubmit}>
         <div className="w-full flex flex-col my-4 text-black">
@@ -153,7 +155,7 @@ export default function ContactForm() {
             required
             onChange={handleInputChange}
             minLength={10}
-            maxLength={150}
+            maxLength={10}
             value={formData.phoneNo}
             name="phoneNo"
             placeholder="Phone number"
@@ -186,7 +188,7 @@ export default function ContactForm() {
             required
             onChange={handleInputChange}
             minLength={3}
-            maxLength={200}
+            maxLength={30}
             name="collegeRegistrationNumber"
             placeholder="College Register Number"
             className="p-4 bg-primary text-aneesh text-xl rounded-bl-lg rounded-tr-lg"
@@ -206,7 +208,7 @@ export default function ContactForm() {
                 label: item.text
               }))}
               isMulti
-              maxMenuHeight={150} 
+              maxMenuHeight={180} 
               styles ={customStyles}
               className="p-4 bg-primary text-aneesh text-xl rounded-bl-lg rounded-tr-lg"
             />
