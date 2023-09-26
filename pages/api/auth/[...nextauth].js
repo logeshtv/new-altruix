@@ -10,7 +10,7 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     })
   ],
-  
+  secret: process.env.NEXTAUTH_SECRET,
 }
 console.log(process.env.GOOGLE_CLIENT_ID)
 export default NextAuth(authOptions)
