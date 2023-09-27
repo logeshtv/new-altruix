@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 function Dashboard() {
     const { data: session } = useSession();
     const [isAllowed,setIsAllowed] = useState(false)
-    const permission_granted = ['logeshtv21@gmail.com','araneesh08@gmail.com']
+    const permission_granted = ['logeshtv21@gmail.com','araneesh08@gmail.com','mohansree1709@gmail.com','varshini21.nkl@gmail.com']
     useEffect(()=>{
         if (session){
             setIsAllowed(permission_granted.includes(session.user.email))
