@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import * as xlsx from 'xlsx';
+import QrReader from 'react-qr-scanner'
 
 function ViewTable() {
     const [profile, setProfile] = useState([])
@@ -9,6 +10,10 @@ function ViewTable() {
     const res = await axios.get('/api/getAll');
     setProfile(res.data.profiles);
   },[]);
+
+  const handleScan = (data) => {
+    console.log(data)
+  }
 
   const handleOnExportExcel = () => {
     const specificColumns = profile.map(item => ({
@@ -36,8 +41,11 @@ function ViewTable() {
                 <span className="text-primary text-6xl">{profile.length}</span>
             </div>
         </div>
-            <div>
-                <table class="w-full bg-primary-light  border-yellow-600 border-separate border border-separate border-spacing-2 border border-slate-500">
+        <div>
+        
+        </div>
+            <div className="overflow-x-auto w-full ">
+                <table class=" bg-primary-light  border-yellow-600 border-separate border border-separate border-spacing-2 border border-slate-500">
                 <thead className="text-primary ">
                     <tr className="">
                     <th className="text-primary  " >Name</th>
@@ -51,7 +59,10 @@ function ViewTable() {
                         profile.map((item,key)=> (
                         
                         <tr key={item._id}>
-                        <td  className="text-primary  uppercase font-medium text-center" >{item.Name}</td>
+                        <td  className="text-primary  uppercase font-medium text-center" >
+                        
+                            {item.Name}
+                        </td>
                         <td className="text-primary   font-medium text-center" >{item.email}</td>
                         <td  className="text-primary  uppercase font-medium text-center" >{item.phoneNo}</td>
                         <td className="text-primary  text-center font-medium " >{item.collegeName}</td>

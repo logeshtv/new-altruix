@@ -43,10 +43,10 @@ function Profile({ profileData }) {
                     <div className="text-center">
                       <img
                         className="mx-auto block mb-3 -mt-6 shadow-md"
-                        height="100%"
-                        width="100%"
+                        height="80%"
+                        width="80%"
                         layout="responsive"
-                        src={`https://chart.googleapis.com/chart?chs=450x450&cht=qr&chl=${qrCodeData}`}
+                        src={`https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=${qrCodeData}`}
                         alt="logo"
                     />
                     </div>
