@@ -13,7 +13,6 @@ function ProfilePage() {
   useEffect(() => {
     // Fetch user data based on the 'id' parameter
     if (id) {
-      console.log(id)
       axios.get(`/api/getById?_profileId=${id}`) // Replace with your API endpoint
         .then((response) => {
           console.log(response.data.profiles);

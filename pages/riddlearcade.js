@@ -70,7 +70,7 @@ function About() {
                 <BottomGlitter p="Contact:" />
 
                   <ul className="px-8 py-3 text-xl list-disc p-5">
-                    <li>ajaiysuriya - 7871871816</li>
+                    <li>Ajaiysuriya - 7871871816</li>
                     <li>Ramya A - 8939470605</li>
                   </ul>
                 <a
@@ -98,7 +98,7 @@ function About() {
           <BottomGlitter h2="Event Members" />
         </h2>
           <div className={Styles.cardContainer}>
-          {Symposium.slice(24, 28).map((item, index) => {
+          {Symposium.slice(25, 29).map((item, index) => {
             return (
               <TeamCard
                 key={`${String(index)}-team`}

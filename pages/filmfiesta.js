@@ -12,7 +12,7 @@ function About() {
     <Screen>
       <section className="container mx-auto px-16 sm:px-4 pt-4 md:pt-16 sm:pt-12">
         <div className="my-16 w-full text-center">
-          <BottomGlitter h2="Flim Fiesta" />
+          <BottomGlitter h2="Film Fiesta" />
           <h2 className="text-xl mt-3">
             <BottomGlitter p=" Dive into the Magic of Kollywood" />
           </h2>
@@ -93,7 +93,7 @@ function About() {
           <BottomGlitter h2="Event Members" />
         </h2>
         <div className={Styles.cardContainer}>
-          {Symposium.slice(28, 34).map((item, index) => {
+          {Symposium.slice(29, 35).map((item, index) => {
             return (
               <TeamCard
                 key={`${String(index)}-team`}

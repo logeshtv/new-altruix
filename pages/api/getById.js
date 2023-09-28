@@ -8,12 +8,9 @@ export default async (req, res) => {
   }
 
   await connectDB();
-
   try {
     const { _profileId } = req.query;
-    console.log(_profileId)
     const profiles = await ProfileModel.findById(_profileId);
-
     return res.status(200).json({ profiles });
   } catch (err) {
     return res.status(500).json({ error: 'Internal server error' });

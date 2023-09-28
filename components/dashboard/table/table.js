@@ -47,6 +47,12 @@ function ViewTable() {
                     </tr>
                 </thead>
                 <tbody>
+                <tr>
+                        <td  className="text-primary  uppercase font-medium text-center" >glafhiruegfiuweg;</td>
+                        <td className="text-primary   font-medium text-center" >456365754765</td>
+                        <td  className="text-primary  uppercase font-medium text-center" >dshthetsdjkvbgwluiv</td>
+                        <td className="text-primary  text-center font-medium " >44444k;gvlbjdf;v</td>
+                        </tr>
                     {
                         profile.map((item,key)=> (
                         
