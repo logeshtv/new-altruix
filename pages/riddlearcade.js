@@ -43,7 +43,7 @@ function About() {
                   by the event organizers. The catch? They can only ask yes or
                   no questions, and your team must provide the answers
                 </p>
-                <BottomGlitter p="Round 3:  Caught Adrif (30 mins per batch)" />
+                <BottomGlitter p="Round 3:  Caught Adrift (30 mins per batch)" />
                 <p className="px-8 py-4 text-lg text-sky-400 !important">
                   The final round will put your survival instincts to the test.
                   You'll find yourselves "Caught Adrift" in a scenario inspired
