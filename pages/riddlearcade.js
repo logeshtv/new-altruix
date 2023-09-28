@@ -70,7 +70,7 @@ function About() {
                 <BottomGlitter p="Contact:" />
 
                   <ul className="px-8 py-3 text-xl list-disc p-5">
-                    <li>Ajaiysuriya - 7871871816</li>
+                    <li>Ajaiysuriya - 7871871016</li>
                     <li>Ramya A - 8939470605</li>
                   </ul>
                 <a
