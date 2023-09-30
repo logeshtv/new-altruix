@@ -93,7 +93,7 @@ function About() {
           <BottomGlitter h2="Event Members" />
         </h2>
         <div className={Styles.cardContainer}>
-          {Symposium.slice(29, 35).map((item, index) => {
+          {Symposium.slice(30, 36).map((item, index) => {
             return (
               <TeamCard
                 key={`${String(index)}-team`}

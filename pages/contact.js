@@ -55,16 +55,15 @@ function ContactUs() {
               Let&apos;s talk!
             </h1>
             <p className="mt-20 w-2/5 text-lg xl:w-3/5 sm:w-3/4 sm:text-base">
-              Just fill this simple form in and we will contact you promptly.
-              Hate forms? Drop us a line at{' '}
+               Drop us a line at{' '}
               <span>
                 <a className="text-blue" href="mailto:hnccbits@gmail.com">
-                  hnccbits@gmail.com
+                  altruix2k23@gmail.com
                 </a>
               </span>
             </p>
           </div>
-          <div className="mt-16">
+          {/* <div className="mt-16">
             <form ref={form} onSubmit={sendEmail}>
               <div className="flex justify-between items-center flex-wrap xl:flex-col xl:justify-start xl:items-start">
                 <StyledInput
@@ -111,7 +110,7 @@ function ContactUs() {
                 </Button>
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </section>
     </Screen>

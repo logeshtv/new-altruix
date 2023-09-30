@@ -21,6 +21,7 @@ module.exports = {
       },
       aneesh: "hsl(5, 100%, 60%)",
       red: "#FF370D",
+      green: "#20b2aa",
       dashboardNav:"#1D1D1D",
     },
 		screens: {
