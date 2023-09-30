@@ -1,6 +1,9 @@
 // pages/api/profile/getByProfileId.js
 import ProfileModel from "@/models/ProfileModel";
 import connectDB from "@/utils/connectDB";
+import jwt from 'jwt-simple';
+import {ObjectId } from "mongodb";
+
 
 export default async (req, res) => {
   if (req.method !== "PUT") {
@@ -9,9 +12,12 @@ export default async (req, res) => {
 
   await connectDB();
   try {
-    const { _profileId } = req.query;
-    const { eventName } = req.body;
-    const updatedProfile = await ProfileModel.findOneAndUpdate({_id: _profileId,isPaid: true},{$addToSet: { eventAttended: eventName }},{new: true});
+    const { eventName ,_profileId } = req.body;
+    const decodedid = jwt.decode(_profileId, process.env.JWT_KEY);
+    const objectIdString = decodedid.data.replace(/"/g, '');
+    const objectId = new ObjectId(objectIdString);
+
+    const updatedProfile = await ProfileModel.findOneAndUpdate({_id: objectId ,isPaid: true},{$addToSet: { eventAttended: eventName }},{new: true});
     
     if (!updatedProfile) {
       return res.status(200).json({ message:"User doesn't Paid!!!!", });

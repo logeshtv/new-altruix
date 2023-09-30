@@ -8,7 +8,7 @@ export default async (req, res) => {
   }
   await connectDB();
   try {
-    const { eventName } = req.body;
+    const { eventName } = req.query;
     const EventProfiles = await ProfileModel.find({
       eventAttended: eventName,
       isPaid: true

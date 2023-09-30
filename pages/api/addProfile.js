@@ -122,7 +122,7 @@ export default async (req, res) => {
     });
     
     
-      return res.status(201).json({ message: "Detail Added successfully!!" ,data :savedProfile});
+      return res.status(201).json({ message: "Detail Added successfully!!" ,data : emailData});
     } catch (err) {
       return res.status(500).json({ error: 'Internal server error' });
     }
