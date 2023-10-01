@@ -5,7 +5,7 @@ import Dashnavbar from "../components/navbar/navbar";
 import RegisterationAccess from "@/lib/data/RegistrationAccess";
 import ViewTable from "../table/table";
 import { QrScanner } from "@yudiel/react-qr-scanner";
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "/api"; // Replace with your actual API base URL
+
 
 export default function EventPage({ eventName }) {
   const { data: session } = useSession();
@@ -27,7 +27,7 @@ export default function EventPage({ eventName }) {
     if (data) {
       try {
         setLoading(true); // Set loading state while making the request
-        const res = await axios.put(`${API_BASE_URL}/eventAttended`, {
+        const res = await axios.put(`/api/eventAttended`, {
           eventName: eventName,
           _profileId: data,
         });
