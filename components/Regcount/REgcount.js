@@ -28,7 +28,7 @@ function RegCounter(){
     }, []);
 
     return(
-        <section ref={ref} className="container-70 items-center py-16 fadeonscroll sm:transform-none sm:opacity-100">
+        <section ref={ref} className="container-70 items-center pt-8 fadeonscroll sm:transform-none sm:opacity-100">
             <div className="flex xl:flex-col sm:flex-col 2xl:flex-col justify-around">
                 <div className="max-w-md py-4 px-8 border-4 border-aneesh shadow-lg rounded-lg my-20">
                     <div>

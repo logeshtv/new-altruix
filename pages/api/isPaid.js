@@ -1,6 +1,9 @@
 // pages/api/profile/getByProfileId.js
 import ProfileModel from "@/models/ProfileModel";
 import connectDB from "@/utils/connectDB";
+import jwt from 'jwt-simple';
+import {ObjectId } from "mongodb";
+
 
 export default async (req, res) => {
   if (req.method !== "PUT") {
@@ -9,8 +12,11 @@ export default async (req, res) => {
 
   await connectDB();
   try {
-    const { _profileId } = req.query;
-    const profile = await ProfileModel.findById(_profileId);
+    const { _profileId } = req.body;
+    const decodedid = jwt.decode(_profileId, process.env.JWT_KEY);
+    const objectIdString = decodedid.data.replace(/"/g, '');
+    const objectId = new ObjectId(objectIdString);
+    const profile = await ProfileModel.findById(objectId);
     if (!profile) {
       return res.status(404).json({ message: 'Profile not found' });
     }
