@@ -1,8 +1,8 @@
 .event {
-    @apply my-24 mb-8 sm:my-12;
+    @apply my-12 mb-8 sm:my-12;
   }
   .cardContainer {
-    @apply grid gap-16 my-12 sm:my-6;
+    @apply grid gap-16 my-8 sm:my-6;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
   
