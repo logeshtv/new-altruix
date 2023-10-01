@@ -7,6 +7,7 @@ import Screen from '../components/screen/Screen';
 import TechStack from '../components/techStack/TechStack';
 import Video from '../components/video/Video';
 import CountdownTimer from '../components/CountDown/CountDownTimer';
+import RegCounter from '@/components/Regcount/REgcount';
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       </Head>
       <Video />
       <CountdownTimer />
+      <RegCounter/>
       <HomeAbout />
       <TechStack />
       <GridGallery />

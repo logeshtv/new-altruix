@@ -72,7 +72,7 @@ export default function EventPage({ eventName }) {
               <thead>
                 <tr className=" uppercase bg-primary-light h-12 w-full">
                     <th>
-                      <div className=" text-xl text-primary">Name</div>
+                      <div className=" text-xl min-w-64 text-primary">Name</div>
                     </th>
                     <th>
                       <div className=" text-xl text-primary">Email</div>
@@ -146,10 +146,15 @@ export default function EventPage({ eventName }) {
               <>
               <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
                 <h2 className="flex font-bold text-primary">Dear, {profile.Name}</h2>
-                <p className="flex itms-center text-green font-bold">You have successfully registered for the event</p>
+                <p className="flex items-center  text-green font-bold">You have successfully registered for the event</p>
               </div>
               </>
-            ) : (
+            ) : (message!=='')?
+            <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
+                <p className="flex items-center  text-green font-bold">{message}</p>
+            </div>
+            :
+            (
               <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
                 <h2 className="flex text-3xl text-aneesh font-bold">Scan QR to register</h2>
               </div>

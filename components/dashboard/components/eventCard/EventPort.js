@@ -10,7 +10,7 @@ function EventPort() {
     <section className={Styles.event}>
       <BottomGlitter text="Event Dashboard" />
       <div className={Styles['cardContainer']}>
-        {DashboardData.slice(2,6).map((item, index) => {
+        {DashboardData.slice(3,7).map((item, index) => {
           return (
             <EventCard
               title={item.title}

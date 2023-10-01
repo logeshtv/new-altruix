@@ -10,7 +10,7 @@ function AdminCard() {
     <section className={Styles.event}>
       <BottomGlitter text="Admin Dashboard" />
       <div className={Styles['cardContainer']}>
-        {DashboardData.slice(0,2).map((item, index) => {
+        {DashboardData.slice(0,3).map((item, index) => {
           return (
             <EventCard
               title={item.title}

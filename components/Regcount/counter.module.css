@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'ActionComic';
+    src: url(../fonts/Heroes\ Legend\ Hollow.ttf);
+  }
+
+.number {
+    font-family: 'ActionComic';
+    background: url('https://i.pinimg.com/originals/64/f9/60/64f9607347a4a28fb88724520b796a41.gif') center center repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.text {
+    font-family: 'ActionComic';
+    background: url('https://i.pinimg.com/originals/64/f9/60/64f9607347a4a28fb88724520b796a41.gif') center center repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+@media (max-width: 610px) {
+    .number {
+        font-size: 37px;
+    }
+    
+    .text {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 340px) {
+    .number {
+        font-size: 26px;
+    }
+    
+    .text {
+        font-size: 15px;
+    }
+}
