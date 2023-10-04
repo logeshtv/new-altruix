@@ -1,0 +1,27 @@
+import React from 'react'
+import Image from "next/image";
+
+async function page() {
+
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const user = await res.json();
+    const colname = ['Name', 'Reg No', 'Phone', 'Photo']
+  return (
+    <>
+        <div className='p-10  text-4xl font-bold text-center'>
+            Tech Fusion
+        </div>
+      <div className=" flex flex-col-reverse md:flex-row p-8    ">
+        
+        <div className="p-10   flex justify-center lg:items-center  ">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5d3f241fa4e0350001fa20d5/1636491460338-AIZAXV2978MGIDQE0GT7/qr-code.png?format=2500w"
+            alt="QR Code"
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default page

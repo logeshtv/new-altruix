@@ -5,7 +5,6 @@ import Dashnavbar from "../components/navbar/navbar";
 import RegisterationAccess from "@/lib/data/RegistrationAccess";
 import { QrScanner } from "@yudiel/react-qr-scanner";
 
-
 export default function PaymentList() {
   const { data: session } = useSession();
   const [isAllowed, setIsAllowed] = useState(false);
@@ -25,14 +24,14 @@ export default function PaymentList() {
   const handleScan = async (data) => {
     if (data) {
       try {
-        setLoading(true); // Set loading state while making the request
+        setLoading(true);
         const res = await axios.put(`/api/isPaid`, {
           _profileId: data,
         });
         if (res.data && res.data.PaidProfiles && res.data.profile) {
           setEventProfile(res.data.PaidProfiles);
           setProfile(res.data.profile);
-          setMessage(res.data.message); // Clear any previous error messages
+          setMessage(res.data.message);
         } else {
           if (res.data && res.data.message) {
             setMessage(res.data.message);
@@ -40,15 +39,14 @@ export default function PaymentList() {
             setMessage("An error occurred while processing your QR code.");
           }
         }
-        setLoading(false); // Reset loading state after request is complete
+        setLoading(false);
       } catch (err) {
         console.error(err);
         setError("An error occurred while processing your QR code.");
-        setLoading(false); // Reset loading state in case of error
+        setLoading(false);
       }
     }
   };
-  
 
   return (
     <>
@@ -63,107 +61,121 @@ export default function PaymentList() {
           </div>
         </div>
       ) : (
-        <div className="sm:p-4 p-8 flex">
-          <div className="w-full">
-          <div className="overflow-x-auto w-full  px-4 sm:rounded-lg ">
-            <table className="table text-primary">
-              <thead>
-                <tr className=" uppercase bg-primary-light h-12 w-full">
-                    <th>
-                      <div className=" text-xl min-w-64 text-primary">Name</div>
+        <div className="sm:p-4 p-8 flex justify-between space-x-6">
+          <div className="w-3/4 sm:w-3/5">
+            <div className="overflow-x-auto w-full sm:rounded-lg">
+              <table className="table-auto w-full">
+                <thead>
+                  <tr className="bg-primary-dark">
+                    <th className="py-2 px-4 text-lg font-bold text-gray-300">
+                      Name
                     </th>
-                    <th>
-                      <div className=" text-xl text-primary">Email</div>
+                    <th className="py-2 px-4 text-lg font-bold text-gray-300">
+                      Email
                     </th>
-                    <th>
-                      <div className=" text-xl text-primary">Phone Number</div>
+                    <th className="py-2 px-4 text-lg font-bold text-gray-300">
+                      Phone Number
                     </th>
-                    <th>
-                      <div className=" text-xl text-primary">CollegeName</div>
+                    <th className="py-2 px-4 text-lg font-bold text-gray-300">
+                      CollegeName
                     </th>
-                    <th>
-                      <div className=" text-xl text-primary">Payment</div>
+                    <th className="py-2 px-4 text-lg font-bold text-gray-300">
+                      Payment
                     </th>
-
-                </tr>
-              </thead>
-              <tbody>
-                {eventProfile.map((user) => (
-                  <tr className="hover bg-primary-light">
-                    <td className="h-12 px-4">
-                      <div className="flex items-center space-x-3">
-                        <div>
-                          <div className=" text-xl text-primary">{user.Name}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div className=" text-xl text-primary">{user.email}</div>
-                    </td>
-                    <td>
-                      <div className=" text-xl text-primary">{user.phoneNo}</div>
-                    </td>
-                    <td>
-                      <div className=" text-xl text-primary">{user.collegeName}</div>
-                    </td>
-                    <td>
-                      <div className="font-bold">{
-                          (user.isPaid)?
-                          <b className="text-primary h-8 w-18 py-2 px-6 rounded-2xl bg-green">paid</b>
-                          :
-                          <b className="text-primary h-8 w-18 py-2 px-6 rounded-2xl bg-aneesh">Unpaid</b>
-                      }
-                      </div>
-                    </td>
-                    
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          </div>
-          <div className="w-[500px] p-8 -mt-10">
-            <p>
-              PAYMENT REGISTRATION
-            </p>
-            <QrScanner
-              onDecode={(result) => handleScan(result)}
-              onError={(error) => console.log(error?.message)}
-            />
-
-            {loading ? (
-              <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
-                <p className="flex text-3xl text-aneesh font-bold">Scanning QR code...</p>
-              </div>
-            ) : (message!=='')?
-            <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
-                <h2 className="flex font-bold text-primary">Dear, {profile.Name}</h2>
-                <p className="flex items-center  text-green font-bold">{message}</p>
+                </thead>
+                <tbody>
+                  {eventProfile.map((user) => (
+                    <tr key={user.email} className="hover:bg-red">
+                      <td className="py-3 px-4">
+                        <div className="flex items-center space-x-3">
+                          <div>
+                            <div className="font-semibold text-center">
+                              {user.Name}
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <div className="font-semibold text-center">
+                          {user.email}
+                        </div>
+                      </td>
+                      <td className="py-3 px-4">
+                        <div className="font-semibold text-center">
+                          {user.phoneNo}
+                        </div>
+                      </td>
+                      <td className="py-3 px-4">
+                        <div className="font-semibold">{user.collegeName}</div>
+                      </td>
+                      <td className="py-3 px-4">
+                        <div className="font-semibold">
+                          {user.isPaid ? (
+                            <span className="bg-green text-white py-1 px-8 rounded-full">
+                              Paid
+                            </span>
+                          ) : (
+                            <span className="bg-red text-white py-1 px-4 rounded-full">
+                              Unpaid
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            : profile.Name ? (
-              <>
-              <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
-                <h2 className="flex font-bold text-primary">Dear, {profile.Name}</h2>
-                <p className="flex items-center  text-green font-bold">You have successfully Paid</p>
-              </div>
-              </>
-            )
-            : error ? (
-              <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
-                <p className="flex text-3xl text-red-500 font-bold">{error}</p>
-              </div>
-            ) 
-            :
-            (
-              <div className="flex flex-col items-center h-[200px] mt-6 w-full bg-primary-light justify-center">
-                <h2 className="flex text-3xl text-aneesh font-bold">Scan QR to register</h2>
-              </div>
-            )}
+          </div>
+
+          <div className="w-1/4 sm:w-2/5">
+            <div className="p-8">
+              <p className="text-lg">PAYMENT REGISTRATION</p>
+              <QrScanner
+                onDecode={(result) => handleScan(result)}
+                onError={(error) => console.log(error?.message)}
+                size={200}
+              />
+              {loading ? (
+                <div className="mt-6 bg-primary-light p-4 rounded-lg">
+                  <p className="text-lg text-aneesh font-semibold">
+                    Scanning QR code...
+                  </p>
+                </div>
+              ) : message !== "" ? (
+                <div className="mt-6  p-4 rounded-lg  p-4 rounded-lg bg-primary-light">
+                  <h2 className="text-primary font-bold">
+                    Dear, <span className="text-green text-2xl font-bold">{profile.Name}</span>
+                  </h2>
+                  <p className="text-primary font-semibold">
+                    {message}
+                  </p>
+                </div>
+              ) : profile.Name ? (
+                <div className="mt-6  p-4 rounded-lg  p-4 rounded-lg bg-primary-light">
+                  <h2 className="text-primary  font-bold">
+                    Dear, <span className="text-green text-2xl font-bold" >{profile.Name}</span>
+                  </h2>
+                  <p className=" text-primary font-semibold">
+                    You have successfully Paid.
+                  </p>
+                </div>
+              ) : error ? (
+                <div className="mt-6 bg-red-100 dark:bg-red-700 p-4 rounded-lg">
+                  <p className="text-red-500 font-semibold">{error}</p>
+                </div>
+              ) : (
+                <div className="mt-6 bg-primary-light p-4 rounded-lg">
+                  <h2 className="text-aneesh text-lg font-semibold">
+                    Scan QR to register
+                  </h2>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
     </>
   );
 }
-
-

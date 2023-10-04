@@ -181,7 +181,7 @@ export default function ContactForm() {
         </div>
         <div className="w-full flex flex-col my-4 text-black">
           <label className="font-bold text-2xl text-gray-800" htmlFor="collegeRegisterNumber">
-          College Register Number
+          College Register Number <span className='text-base font-normal'>(If Alphanumeric , give phonenumber)</span>
           </label>
           <input
             value={formData.collegeRegistrationNumber}

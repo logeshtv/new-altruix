@@ -23,6 +23,7 @@ module.exports = {
       red: "#FF370D",
       green: "#20b2aa",
       dashboardNav:"#1D1D1D",
+      gray:"#808080",
     },
 		screens: {
       'm2xl': { min: '1500px' },
