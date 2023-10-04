@@ -73,7 +73,7 @@ export default function ViewTable({tableData, tableTitle}) {
     if (column.field === 'isPaid') {
       return(
         ((display_value)?
-        <b className="text-primary h-8 w-18 py-2 px-6 rounded-2xl bg-green">paid</b>
+        <b className="text-primary h-8 w-18 py-2 px-8 rounded-2xl bg-green"> paid</b>
         :
         <b className="text-primary h-8 w-18 py-2 px-6 rounded-2xl bg-aneesh">Unpaid</b>)
       );

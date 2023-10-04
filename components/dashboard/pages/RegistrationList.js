@@ -9,7 +9,7 @@ function RegistrationList() {
     const { data: session } = useSession();
     const [isAllowed,setIsAllowed] = useState(false)
     const [profile, setProfile] = useState([])
-    const permission_granted = ['logeshtv21@gmail.com','anandasriram0303@gmail.com','rohith14n@gmail.com','thrishasathya19@gmail.com','vishalisow003@gmail.com','araneesh08@gmail.com','mohansree1709@gmail.com','akjaddu@gmail.com','alphadevtech07@gmail.com','varshini21.nkl@gmail.com']
+    const permission_granted = ['logeshtv21@gmail.com','anandasriram0303@gmail.com','rohith14n@gmail.com','thrishasathya19@gmail.com','vishalisow003@gmail.com','araneesh08@gmail.com','mohansree1709@gmail.com','shaaakil234@gmail.com','akjaddu@gmail.com','alphadevtech07@gmail.com','varshini21.nkl@gmail.com']
     useEffect(async ()=>{
         if (session){
             setIsAllowed(permission_granted.includes(session.user.email))
