@@ -45,6 +45,7 @@ export default function ContactForm() {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [showWarning, setShowWarning] = useState(false);
   const [Registered,SetRegistered] = useState(true);
+  const [isLock,setIsLock] = useState(true)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -109,9 +110,25 @@ export default function ContactForm() {
         <BottomGlitter text="Registration For Other Events" />
       </div>
       <span>(Registration fees 150 per head)</span>
+
+
       <div className="w-3/5 sm:w-5/6 lg:w-4/5 lg:p-8 xl:w-4/5 sm:p-4 p-16 sm:mt-12 mt-24 bg-aneesh rounded-lg" >
       <form onSubmit={handleSubmit}>
+        {(isLock)?
+        <div className='text-2xl font-bold'>
+        Online registrations are closed. <br/>
+         On-site registration is available for students from other colleges only.
+
+         <h3 className='text-2xl mt-8 text-primary font-semibold'>If any queries in registration, 
+          <br/>
+          contact - altruix2k23@gmail.com
+          <br/>
+          contact - +91 9486985820
+        </h3>
+        </div>:
+        <>
         <div className="w-full flex flex-col my-4 text-black">
+        
         <label className="font-bold text-2xl sm:text-xl text-gray-800" htmlFor="name">
             Name
           </label>
@@ -233,6 +250,7 @@ export default function ContactForm() {
           <br/>
           contact - +91 9486985820
         </h3>
+        </>}
       </form>
       </div>
       </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Dashnavbar from "../components/navbar/navbar";
 import RegisterationAccess from "@/lib/data/RegistrationAccess";
 import { QrScanner } from "@yudiel/react-qr-scanner";
+import * as xlsx from 'xlsx';
 
 export default function EventPage({ eventName }) {
   const { data: session } = useSession();
@@ -51,6 +52,21 @@ export default function EventPage({ eventName }) {
     }
   };
 
+  const handleOnExportExcel = () => {
+    const specificColumns = eventProfile.map(item => ({
+        Name: item.Name,
+        Email: item.email,
+        PhoneNumber: item.phoneNo,
+        collegeName: item.collegeName,
+        RegistrationId : item.collegeRegistrationNumber,
+        isPaid: item.isPaid
+      }));
+    var wb = xlsx.utils.book_new(),
+    ws = xlsx.utils.json_to_sheet(specificColumns);
+    xlsx.utils.book_append_sheet(wb,ws,"ProfileData");
+    xlsx.writeFile(wb,eventName+"_registered.xlsx")
+  }
+
   return (
     <div className="bg-gray-900 text-white">
       <Dashnavbar />
@@ -67,6 +83,9 @@ export default function EventPage({ eventName }) {
       ) : (
         <div className="sm:p-4 p-8 flex justify-between space-x-6">
           <div className="w-3/4 sm:w-3/5"> 
+            <div className="flex justify-end px-5 pb-5">
+            <button onClick={handleOnExportExcel} className='h-12 w-32 bg-aneesh flex items-center justify-center '>EXPORT</button>
+            </div>
             <div className="overflow-x-auto w-full sm:rounded-lg">
               <table className="table-auto w-full">
                 <thead>

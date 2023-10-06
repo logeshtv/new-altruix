@@ -5,8 +5,10 @@ import BottomGlitter from '../components/StyledText/BottomGlitter';
 import EventCard from '../components/event/EventGenral';
 import Form from '@/components/forms/Forms';
 import Button from '../components/button/Button';
+import { useState } from 'react';
 
 function About() {
+  
   return (
     <Screen>
       <Head>
