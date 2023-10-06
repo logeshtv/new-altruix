@@ -45,7 +45,7 @@ export default function ContactForm() {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [showWarning, setShowWarning] = useState(false);
   const [Registered,SetRegistered] = useState(true);
-  const [isLock,setIsLock] = useState(true)
+  const [isLock,setIsLock] = useState(false)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
